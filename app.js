@@ -318,6 +318,13 @@
   }
 
   function init() {
+    // El carrito permanece completamente cerrado al entrar o actualizar.
+    // Solo openCart() puede mostrarlo después de que el usuario pulse el botón.
+    const drawer = $("#cartDrawer");
+    const overlay = $("#cartOverlay");
+    if (drawer) drawer.classList.add("hidden");
+    if (overlay) overlay.classList.add("hidden");
+
     $("#year").textContent = new Date().getFullYear();
 
     renderProducts();
