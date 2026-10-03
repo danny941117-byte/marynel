@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="MARYNEL — compra en línea, recibe por envío o compra físicamente.">
+  <title>MARYNEL | Compra en línea</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="MARYNEL inicio">
+        <div class="brand-mark">M</div>
+        <div>
+          <strong>MARYNEL</strong>
+          <span>Innovación • Movimiento • Futuro</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#como-comprar">Cómo comprar</a>
+        <a href="#contacto">Contacto</a><a href="#admin">Administrar</a>
+      </nav>
+
+      <button id="cartButton" class="cart-button" type="button" aria-label="Abrir carrito">
+        🛒 <span>Carrito</span> <b id="cartCount">0</b>
+      </button>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">TIENDA MARYNEL</p>
+          <h1>Compra en línea.<br><span>Recibe donde estés.</span></h1>
+          <p class="hero-text">
+            Descubre productos seleccionados por MARYNEL, compra en línea,
+            elige cómo recibirlos y prepárate para una experiencia de compra sencilla.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#tienda">Explorar tienda</a>
+            <a class="button ghost" href="#como-comprar">Cómo funciona</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="orb">M</div>
+          <p>MARYNEL</p>
+          <small>Tu próxima compra empieza aquí.</small>
+        </div>
+      </section>
+
+      <section class="benefits">
+        <article><span>🛍️</span><div><strong>Compra en línea</strong><small>Desde cualquier dispositivo.</small></div></article>
+        <article><span>📦</span><div><strong>Envíos</strong><small>Opciones de entrega para tus pedidos.</small></div></article>
+        <article><span>🏪</span><div><strong>Compra física</strong><small>También puedes adquirir productos presencialmente.</small></div></article>
+        <article><span>💳</span><div><strong>Pago en línea</strong><small>Checkout preparado para integrar el proveedor de pagos.</small></div></article>
+      </section>
+
+      <section id="tienda" class="section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">EXPLORA</p>
+            <h2>Productos destacados</h2>
+          </div>
+          <select id="categoryFilter" aria-label="Filtrar productos">
+            <option value="all">Todas las categorías</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Accesorios">Accesorios</option>
+            <option value="Hogar">Hogar</option>
+            <option value="Herramientas">Herramientas</option>
+          </select>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <section id="como-comprar" class="section how-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SIMPLE Y DIRECTO</p>
+            <h2>Compra como prefieras</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <article><b>01</b><span>🛒</span><h3>Elige</h3><p>Agrega tus productos al carrito.</p></article>
+          <article><b>02</b><span>📍</span><h3>Recibe</h3><p>Selecciona envío o compra física.</p></article>
+          <article><b>03</b><span>💳</span><h3>Paga</h3><p>Continúa al pago en línea.</p></article>
+          <article><b>04</b><span>✅</span><h3>Confirma</h3><p>Obtén el resumen de tu pedido.</p></article>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div>
+          <p class="eyebrow">MARYNEL</p>
+          <h2>Una tienda. Diferentes formas de comprar.</h2>
+          <p>Esta base está preparada para crecer con catálogo, pagos, envíos y herramientas para clientes.</p>
+        </div>
+        <a class="button primary" href="#tienda">Comprar ahora</a>
+      </section>
+    </main>
+
+
+      <section id="admin" class="section admin-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ADMINISTRACIÓN</p>
+            <h2>Agregar producto</h2>
+            <p class="admin-intro">Sube una foto, agrega nombre, precio, categoría, existencias y un pequeño detalle.</p>
+          </div>
+        </div>
+        <div class="admin-layout">
+          <form id="productForm" class="admin-form">
+            <label>Foto del producto
+              <input id="productImage" type="file" accept="image/*" required>
+              <small>Recomendado: imagen menor de 2 MB en esta versión.</small>
+            </label>
+            <div class="form-grid">
+              <label>Nombre<input id="productName" required maxlength="80" placeholder="Ej. Audífonos Bluetooth"></label>
+              <label>Precio<input id="productPrice" type="number" min="0" step="0.01" required placeholder="0.00"></label>
+            </div>
+            <div class="form-grid">
+              <label>Categoría<input id="productCategory" maxlength="40" placeholder="Ej. Tecnología"></label>
+              <label>Existencias<input id="productStock" type="number" min="0" value="1"></label>
+            </div>
+            <label>Detalle<textarea id="productDescription" rows="4" maxlength="220" required placeholder="Pequeña descripción del producto"></textarea></label>
+            <div class="admin-actions">
+              <button class="button primary" type="submit">＋ Publicar producto</button>
+              <button id="resetProducts" class="button danger-button" type="button">Restaurar demo</button>
+            </div>
+          </form>
+          <div class="admin-preview">
+            <p class="eyebrow">VISTA PREVIA</p>
+            <div id="productPreview" class="preview-card">
+              <div class="preview-image">📷</div>
+              <div class="preview-info"><span>PRODUCTO</span><h3>Tu producto aparecerá aquí</h3><p>Completa los datos para ver la presentación.</p><strong>Q0.00</strong></div>
+            </div>
+          </div>
+        </div>
+        <div class="admin-list-head"><div><p class="eyebrow">CATÁLOGO</p><h3>Productos cargados</h3></div><span id="adminProductCount">0 productos</span></div>
+        <div id="adminProductList" class="admin-product-list"></div>
+      </section>
+
+    <footer id="contacto" class="footer">
+      <div class="footer-brand">
+        <div class="brand-mark">M</div>
+        <div><strong>MARYNEL</strong><small>Todo lo que necesitas está en MARYNEL.</small></div>
+      </div>
+      <div class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#como-comprar">Cómo comprar</a>
+      </div>
+      <p>© <span id="year"></span> MARYNEL. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="cartOverlay" class="overlay hidden"></div>
+    <aside id="cartDrawer" class="drawer" aria-label="Carrito de compras">
+      <div class="drawer-head">
+        <div><p class="eyebrow">TU COMPRA</p><h2>Carrito</h2></div>
+        <button id="closeCart" class="icon-button" type="button" aria-label="Cerrar carrito">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <div><span>Subtotal</span><strong id="cartSubtotal">Q0.00</strong></div>
+        <div><span>Envío</span><strong id="cartShipping">Por calcular</strong></div>
+        <div class="total"><span>Total</span><strong id="cartTotal">Q0.00</strong></div>
+        <button id="checkoutButton" class="button primary full" type="button">Continuar al pago</button>
+      </div>
+    </aside>
+
+    <div id="checkoutModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <div class="modal-card checkout-card">
+        <button id="closeCheckout" class="modal-close" type="button">✕</button>
+        <p class="eyebrow">CHECKOUT</p>
+        <h2 id="checkoutTitle">Completa tu pedido</h2>
+        <p class="modal-intro">En esta versión, el checkout está listo para conectar el proveedor de pago.</p>
+
+        <form id="checkoutForm">
+          <div class="form-grid">
+            <label>Nombre completo<input name="name" required autocomplete="name" placeholder="Tu nombre"></label>
+            <label>Teléfono<input name="phone" required autocomplete="tel" placeholder="0000-0000"></label>
+            <label>Correo electrónico<input name="email" type="email" required autocomplete="email" placeholder="correo@ejemplo.com"></label>
+            <label>Forma de compra
+              <select name="delivery" id="deliveryType" required>
+                <option value="shipping">Envío</option>
+                <option value="pickup">Compra física / recoger</option>
+              </select>
+            </label>
+          </div>
+
+          <label id="addressField">Dirección de entrega<textarea name="address" rows="3" placeholder="Indica dónde deseas recibir tu pedido"></textarea></label>
+
+          <div class="payment-placeholder">
+            <div class="payment-icon">💳</div>
+            <div>
+              <strong>Pago en línea</strong>
+              <p>Área preparada para conectar Recurrente u otro proveedor de pagos.</p>
+            </div>
+          </div>
+
+          <div class="order-preview">
+            <span>Total del pedido</span>
+            <strong id="checkoutTotal">Q0.00</strong>
+          </div>
+
+          <button class="button primary full" type="submit">Continuar al pago</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="successModal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-card success-card">
+        <div class="success-icon">✓</div>
+        <p class="eyebrow">PEDIDO PREPARADO</p>
+        <h2>¡Todo listo!</h2>
+        <p id="successText">El pedido fue preparado correctamente.</p>
+        <button id="closeSuccess" class="button primary" type="button">Volver a la tienda</button>
+      </div>
+    </div>
+
+    <section id="diagnosticPanel" class="diagnostic">
+      <div><strong>Diagnóstico MARYNEL</strong><span id="diagnosticStatus">Inicializando…</span></div>
+      <pre id="diagnosticLog">Sistema iniciado.</pre>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
